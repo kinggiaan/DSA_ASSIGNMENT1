@@ -1,5 +1,5 @@
 #include "SymbolTable.h"
-int global_level = 0;
+
 
 SymbolTable::SymbolTable() :head(NULL) {};
 SymbolTable::SymbolTable(SymbolNode* _head) : head(_head)  {};
@@ -17,6 +17,7 @@ SymbolTable::~SymbolTable() {
 }
 void SymbolTable::run(string filename)
 {
+    int global_level = 0;
     ifstream File(filename);
     string str="";
     if (File.is_open()) {
@@ -248,7 +249,8 @@ void SymbolTable::run(string filename)
         }
         
     }
-    if (global_level != 0) throw UnclosedBlock(global_level);
+    if (global_level > 0) throw UnclosedBlock(global_level);
+    //else if (global_level < 0) throw UnknownBlock;
 }
 /////////////Function Addition/////
 bool checkCode(string str) {

@@ -3,6 +3,7 @@
 #include "main.h"
 
 
+/////////////Function Addition/////
 
 bool checkCode(string str);
 bool checkConstDigi(string str);
