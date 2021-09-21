@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 INSERT uf number
 INSERT q1 number
 INSERT kY number
@@ -85,3 +86,12 @@ INSERT f string
 INSERT w4ZAl number
 RPRINT
 j l1
+=======
+INSERT x number
+INSERT y string
+BEGIN
+INSERT x number
+INSERT z number
+PRINT
+END
+>>>>>>> Stashed changes
