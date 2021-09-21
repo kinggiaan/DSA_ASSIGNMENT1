@@ -234,7 +234,7 @@ void SymbolTable::run(string filename)
                     bool found = false;
                     SymbolNode* temp = MainTable.head;
                     while (temp != NULL) {
-                        if (temp->data.indentify == key2) {
+                        if ((temp->data.indentify == key2)&&(temp->data.level<=global_level)) {
                             found = true;
                             iniLevel = temp->data.level;
                             if (iniLevel == global_level) {
