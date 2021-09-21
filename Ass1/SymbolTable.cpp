@@ -225,7 +225,6 @@ void SymbolTable::run(string filename)
     }
     if (global_level != 0) throw UnclosedBlock(global_level);
 }
-
 /////////////Function Addition/////
 bool checkCode(string str) {
     if (str == "INSERT" ||
@@ -246,7 +245,7 @@ bool checkConstDigi(string str) {
 bool checkConstString(string str) {
 
     for (size_t i = 0; i < str.length(); i++) {
-        if (!((str[i] <= 90 && str[i] >= 65) || (str[i] >= 97 && str[i] <= 122) || (str[i] < 57 && str[i] > 48) || str[i] == 32)) return false;
+        if (!((str[i] <= 90 && str[i] >= 65) || (str[i] >= 97 && str[i] <= 122) || (str[i] <= 57 && str[i] >= 48) || str[i] == 32)) return false;
     }
     return true;
 }
