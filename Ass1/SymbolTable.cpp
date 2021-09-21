@@ -219,6 +219,31 @@ void SymbolTable::run(string filename)
                 }
                 else throw UnknownBlock();
             }
+
+            if (key1 == "LOOKUP") {
+                
+                if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
+                else {
+                    int largestLevel = 0,iniLevel=0;
+                    bool found = false;
+                    SymbolNode* temp = MainTable.head;
+                    while (temp != NULL) {
+                        if (temp->data.indentify == key2) {
+                            found = true;
+                            iniLevel = temp->data.level;
+                            if (iniLevel == global_level) {
+                                largestLevel = iniLevel;
+                                break;
+                            }
+                            if (iniLevel > largestLevel) largestLevel = iniLevel;
+                            //if (largestLevel == 0) break;
+                        }
+                        temp = temp->next;
+                    }
+                    if (found) cout << largestLevel << endl;
+                    else throw Undeclared(str);
+                }
+            }
            // cout << "success"<<endl;
         }
         
