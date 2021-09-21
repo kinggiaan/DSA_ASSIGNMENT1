@@ -217,7 +217,7 @@ void SymbolTable::run(string filename)
                 //cout << "success" << endl;
 
             }
-
+            ///END
             if (key1 == "END") {
                 global_level--;
                 if (global_level >= 0) {
@@ -225,7 +225,7 @@ void SymbolTable::run(string filename)
                 }
                 else throw UnknownBlock();
             }
-
+            ///LOOKUP
             if (key1 == "LOOKUP") {
                 
                 if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
@@ -250,7 +250,13 @@ void SymbolTable::run(string filename)
                     else throw Undeclared(str);
                 }
             }
+            ///PRINT
+            if (key1 == "PRINT") {
+                MainTable.PRINT();
+            }
            // cout << "success"<<endl;
+
+
         }
         
     }
@@ -300,4 +306,27 @@ bool SymbolTable::checkSameBlockLevelDec( SymbolNode* node) {
         temp = temp->next;
     }
     return false;
+}
+void SymbolTable::PRINT(int globallv) {
+    SymbolNode* temp = this->head;
+    while (temp != NULL) {
+        
+        cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+
+    }
+}
+int SymbolTable::LOOKUPLargest(string iden) {
+        int largestLevel = 0, iniLevel = 0;
+        SymbolNode* temp = this->head;
+        while (temp != NULL) {
+            if (temp->data.indentify == iden ) {
+                
+                iniLevel = temp->data.level;
+                
+                if (iniLevel > largestLevel) largestLevel = iniLevel;
+            }
+            temp = temp->next;
+        }
+  return largestLevel;
+    
 }
