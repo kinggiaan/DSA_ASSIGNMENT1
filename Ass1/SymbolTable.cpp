@@ -93,7 +93,7 @@ void SymbolTable::run(string filename)
                 }
 
             }
-        
+            ///// COMPLETE INVALID INSTRUCTION 
             if (checkCode(key1) == true) {//Instruction Valid
                 if (key1 == "INSERT" || key1 == "ASSIGN")
                     if (count_key != 3) throw InvalidInstruction(str);
@@ -103,7 +103,7 @@ void SymbolTable::run(string filename)
                     if (count_key != 1) throw InvalidInstruction(str);
             }
             else throw InvalidInstruction(str);
-        ///// COMPLETE INVALID INSTRUCTION
+        
             
             
          /////////INSERT////   
@@ -222,29 +222,11 @@ void SymbolTable::run(string filename)
             }
 
             if (key1 == "LOOKUP") {
-                
-                if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
-                else {
-                    int largestLevel = 0,iniLevel=0;
-                    bool found = false;
-                    SymbolNode* temp = MainTable.head;
-                    while (temp != NULL) {
-                        if (temp->data.indentify == key2) {
-                            found = true;
-                            iniLevel = temp->data.level;
-                            if (iniLevel == global_level) {
-                                largestLevel = iniLevel;
-                                break;
-                            }
-                            if (iniLevel > largestLevel) largestLevel = iniLevel;
-                            //if (largestLevel == 0) break;
-                        }
-                        temp = temp->next;
-                    }
-                    if (found) cout << largestLevel << endl;
-                    else throw Undeclared(str);
-                }
+                MainTable.LOOKUPLargest(str,key2,global_level);
+             
             }
+
+            if (key1 =="PRINT")
            // cout << "success"<<endl;
         }
         
@@ -295,4 +277,27 @@ bool SymbolTable::checkSameBlockLevelDec( SymbolNode* node) {
         temp = temp->next;
     }
     return false;
+}
+void SymbolTable::LOOKUPLargest(string str,string key2,int global_level) {
+    if (this->head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
+    else {
+        int largestLevel = 0, iniLevel = 0;
+        bool found = false;
+        SymbolNode* temp = this->head;
+        while (temp != NULL) {
+            if (temp->data.indentify == key2) {
+                found = true;
+                iniLevel = temp->data.level;
+                if (iniLevel == global_level) {
+                    largestLevel = iniLevel;
+                    break;
+                }
+                if (iniLevel > largestLevel) largestLevel = iniLevel;
+                //if (largestLevel == 0) break;
+            }
+            temp = temp->next;
+        }
+        if (found) cout << largestLevel << endl;
+        else throw Undeclared(str);
+    }
 }
