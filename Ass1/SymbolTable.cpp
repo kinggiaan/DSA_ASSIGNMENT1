@@ -121,7 +121,10 @@ void SymbolTable::run(string filename)
                     while (temp != NULL) {
                         if (temp->data.indentify == key2) {
                             if (global_level == temp->data.level) throw Redeclared(str);
-                            else again = true;
+                            else {
+                                again = true;
+                                temp->redeclared = true;
+                            }
                         }
                         temp = temp->next;
                     }
@@ -131,7 +134,7 @@ void SymbolTable::run(string filename)
                     tmp->data.type = key3;
                     tmp->next = NULL;
                     
-                    if(again) tmp->redeclared=global_level;// Neu co xuat hien roi thi tang len theo block
+                    if(again) tmp->redeclared=true;// Neu co xuat hien roi thi tang len theo block
                     
                     temp = MainTable.head;
                     while (temp->next != NULL) {
@@ -262,9 +265,9 @@ void SymbolTable::run(string filename)
                 }
             }
             ///PRINT
-            //if (key1 == "PRINT") {
-            //    MainTable.PRINT();
-           // }
+            if (key1 == "PRINT") {
+              MainTable.PRINT(global_level);
+            }
            // cout << "success"<<endl;
 
 
@@ -321,9 +324,20 @@ bool SymbolTable::checkSameBlockLevelDec( SymbolNode* node) {
 void SymbolTable::PRINT(int globallv) {
     SymbolNode* temp = this->head;
     while (temp != NULL) {
+        if (temp->redeclared == 0) {
+            if (temp->next == NULL) {
+                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
+            }
+            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+    }
+        else if (temp->data.level == globallv) {
+            if (temp->next == NULL) {
+                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
+            }
+            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+        }
         
-        cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
-
+        temp = temp->next;
     }
 }
 int SymbolTable::LOOKUPLargest(string iden) {

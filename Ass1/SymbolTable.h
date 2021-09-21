@@ -22,10 +22,10 @@ struct Symbol {
 struct SymbolNode {
     Symbol data;
     SymbolNode* next;
-    int redeclared;
+    bool redeclared;
 
-    SymbolNode() : data(Symbol()), next(nullptr), redeclared(0) {}
-    SymbolNode(Symbol _data, SymbolNode* _next, int _redeclare) : data(_data), next(_next), redeclared(_redeclare) {}
+    SymbolNode() : data(Symbol()), next(nullptr), redeclared(false) {}
+    SymbolNode(Symbol _data, SymbolNode* _next, bool _redeclare) : data(_data), next(_next), redeclared(_redeclare) {}
 
 
 };
