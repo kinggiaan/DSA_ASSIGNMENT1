@@ -189,12 +189,17 @@ void SymbolTable::run(string filename)
                                 while (tmp != NULL)
                                 {
                                     if (tmp->data.indentify == key3) {
-                                        cout << "success" << endl;
-                                        exits2 = true;
-                                        // delete tmp;
-                                        break;
+                                        if (temp->data.type == tmp->data.type)
+                                        {
+                                            cout << "success" << endl;
+                                            exits2 = true;
+                                            // delete tmp;
+                                            break;
+                                        }
+                                        else throw TypeMismatch(str);
                                     }
-                                    tmp = tmp->next;
+                                        tmp = tmp->next;
+                                    
                                 }
                                 if (exits2 == false) throw Undeclared(str);
                             }
