@@ -1,0 +1,4 @@
+INSERT wR9Sf number
+INSERT dktD number
+INSERT ncF1o string
+ASSIGN wR9Sf 1013
