@@ -39,7 +39,7 @@ public:
     ~SymbolTable() ;
     void run(string filename);
     bool checkSameBlockLevelDec(SymbolNode* node);
-
+    void LOOKUPLargest(string _str,string _key2, int _global_level);
 
     void PRINT();
     void RPRINT();
