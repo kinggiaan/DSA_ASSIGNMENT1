@@ -42,7 +42,7 @@ public:
     
     int LOOKUPLargest(string _iden);
     
-    void PRINT();
+    void PRINT(int _global_level);
     void RPRINT();
     void REVERSE();
 };

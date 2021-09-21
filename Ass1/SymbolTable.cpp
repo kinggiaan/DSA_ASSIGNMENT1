@@ -116,17 +116,28 @@ void SymbolTable::run(string filename)
                     MainTable.head->next = NULL;
                 }
                 else {
+                    bool again = false;//Kiem tra iden xuat hien lan nao trong MainTable chua
                     SymbolNode* temp = MainTable.head;
-                    if (temp->data.indentify==key2&&global_level==temp->data.level) throw Redeclared(str);
+                    while (temp != NULL) {
+                        if (temp->data.indentify == key2) {
+                            if (global_level == temp->data.level) throw Redeclared(str);
+                            else again = true;
+                        }
+                        temp = temp->next;
+                    }
                     SymbolNode* tmp = new SymbolNode;
                     tmp->data.indentify = key2;
                     tmp->data.level = global_level;
                     tmp->data.type = key3;
                     tmp->next = NULL;
+                    
+                    if(again) tmp->redeclared=global_level;// Neu co xuat hien roi thi tang len theo block
+                    
+                    temp = MainTable.head;
                     while (temp->next != NULL) {
                         temp = temp->next;
                         //if (temp->data.indentify == tmp->data.indentify) throw Redeclared(str);
-                        if (checkSameBlockLevelDec(tmp)) throw Redeclared(str);
+                        //if (checkSameBlockLevelDec(tmp)) throw Redeclared(str);
                     }
                     temp->next = tmp;
                     
@@ -251,9 +262,9 @@ void SymbolTable::run(string filename)
                 }
             }
             ///PRINT
-            if (key1 == "PRINT") {
-                MainTable.PRINT();
-            }
+            //if (key1 == "PRINT") {
+            //    MainTable.PRINT();
+           // }
            // cout << "success"<<endl;
 
 

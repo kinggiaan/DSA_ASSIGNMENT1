@@ -1,0 +1,41 @@
+INSERT uj8 number
+LOOKUP uj8
+BEGIN
+INSERT t string
+INSERT gJik string
+END
+INSERT gq number
+INSERT sFgQj_ string
+INSERT eJ9 number
+INSERT oKt string
+LOOKUP t
+LOOKUP t
+rVxwiK rpP
+INSERT t number
+PRINT
+INSERT evTm string
+BEGIN
+INSERT e number
+INSERT h6zmg string
+INSERT fVu6rT string
+INSERT bz string
+BEGIN
+INSERT nq6C number
+vrv6U ckE
+INSERT caBi number
+BEGIN
+INSERT aWrJv string
+INSERT f string
+khzmf p
+INSERT sgBw string
+INSERT eJ1 number
+INSERT onHdh5 string
+INSERT oAd8 string
+INSERT wl_sp number
+PRINT
+hvpd cp
+RPRINT
+INSERT l string
+LOOKUP gq
+INSERT g2 string
+ASSIGN fVu6rT onHdh5
