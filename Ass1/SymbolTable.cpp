@@ -310,7 +310,6 @@ void SymbolTable::run(string filename)
                             MainTable.head = Node->next;
                             Node->next = NULL;
                             delete Node;
-                            break;
                         }
                         else {
                            
