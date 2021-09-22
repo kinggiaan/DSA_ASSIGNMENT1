@@ -1,91 +1,65 @@
-INSERT y string
-BEGIN
-INSERT y string
-INSERT rEsTB string
-PRINT
-PRINT
-LOOKUP y
-BEGIN
-RPRINT
-INSERT z string
-INSERT fd string
-RPRINT
-ASSIGN z 'v7'
+INSERT mdhxk number
+ASSIGN mdhxk mdhxk
+INSERT i7W4r number
+INSERT qIy string
 INSERT f number
-END
-INSERT gf string
-INSERT pGrN number
-INSERT zl string
-END
-INSERT og_2i number
-ASSIGN y 'bT'
-INSERT qec2 string
-INSERT j string
-INSERT qcK string
-INSERT rxMR5 string
-INSERT nz string
-INSERT vp_RH string
-INSERT ay1 number
-INSERT sn number
-INSERT wso number
+INSERT asWUN number
+INSERT c5e number
+INSERT lSk number
+INSERT w number
+INSERT rXYm number
+BEGIN
+LOOKUP c5e
+INSERT w string
 RPRINT
 BEGIN
-INSERT lNBkY5 number
-INSERT x string
-INSERT pRdn3n string
-INSERT okcZUN string
-INSERT jPB_8 string
-LOOKUP sn
-LOOKUP pGrN
-BEGIN
-INSERT xfQ string
-ASSIGN vp_RH okcZUN
-INSERT xj number
-INSERT qVrk0R number
-INSERT pOs number
-INSERT zOblCc number
-PRINT
-LOOKUP j
-INSERT u1TcC string
-INSERT nY string
-INSERT zmcbV number
 INSERT f string
-INSERT rJhP0 string
-RPRINT
-qE_ oN1UeH
-END
-INSERT cKYwt number
-INSERT o3F string
-d l3G7
-INSERT u number
+INSERT ozP2 string
+ASSIGN w 627
+INSERT v number
+g td
+INSERT n3eZ number
+INSERT q4MS number
+INSERT hnfe number
+BEGIN
+INSERT e number
 PRINT
-INSERT xL number
-INSERT mkW number
-INSERT nN5 string
-ASSIGN pOs 'q'
+INSERT fxT9 string
+INSERT ls number
+ASSIGN w 1066
+INSERT c9LN4P number
+INSERT uN0p string
+INSERT voKzPf number
+INSERT mB4 string
+INSERT o string
+tCKDgO or9RzO
+INSERT nMX0D number
+INSERT iA number
+ASSIGN npe w
 RPRINT
-INSERT hyisc number
-INSERT sFJrDq number
-INSERT j number
-INSERT sLJ string
-LOOKUP j
-ASSIGN xfQ xfQ
-INSERT dktLR number
-LOOKUP zl
-ASSIGN rEsTB f
+INSERT jHdOfA string
+INSERT fh number
 END
-ASSIGN z 1112
-ASSIGN pOs o3F
-INSERT a string
-INSERT zU9q string
-INSERT bzCyYN string
-INSERT gR string
-INSERT twq4 string
-ASSIGN gf 28
-INSERT d number
-INSERT hg6 string
-INSERT sGi3qP number
-INSERT rll number
-INSERT rk number
+INSERT e number
+INSERT eo number
+INSERT pN3c number
+INSERT zd string
+INSERT n4_ string
+INSERT wsPMk number
+END
 RPRINT
-INSERT hUXrRd number
+INSERT vwrmM string
+END
+INSERT jkuEh string
+INSERT v number
+INSERT jW string
+ASSIGN c9LN4P 608
+INSERT q string
+INSERT fbXuJ number
+BEGIN
+END
+INSERT s string
+INSERT tmN3 number
+INSERT p_ string
+ASSIGN f 'DXH'
+END

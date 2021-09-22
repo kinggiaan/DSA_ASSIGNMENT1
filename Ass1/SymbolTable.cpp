@@ -248,7 +248,7 @@ void SymbolTable::run(string filename)
                         
                         if (temp->data.indentify == key2) {
                             if (temp->redeclared) {
-                                if (temp->data.level == global_level) {//Neu tim thay
+                                if (temp->data.level == MainTable.LOOKUPLargest(temp->data.indentify)) {//Neu tim thay
                                     exist = true;
                                     break;
                                 }
