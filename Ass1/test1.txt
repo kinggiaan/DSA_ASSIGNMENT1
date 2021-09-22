@@ -6,3 +6,4 @@ INSERT z number
 RPRINT
 PRINT
 END
+LOOKUP x

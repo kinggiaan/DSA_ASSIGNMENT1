@@ -75,6 +75,10 @@ SymbolNode* SymbolTable::REVERSE() {
     head_ref = pre;
     return head_ref;
 }
+void SymbolTable::DeleteNode(SymbolNode* Node) {
+    
+    
+}
 void SymbolTable::run(string filename)
 {
     int global_level = 0;
@@ -293,6 +297,35 @@ void SymbolTable::run(string filename)
             }
             ///END
             if (key1 == "END") {
+                SymbolNode* temp = MainTable.head;
+                while (temp != NULL) {
+                    if (temp->data.level == global_level) {
+                        SymbolNode* Node = temp;
+                        if (MainTable.head == Node) {//Node in the head
+                            MainTable.head = Node->next;
+                            Node->next = NULL;
+                            delete Node;
+                            break;
+                        }
+                        else {
+                           
+                            SymbolNode* tmp = MainTable.head;
+                            while (tmp != NULL) {
+                                if (tmp->next == Node) {
+                                    tmp->next = Node->next;
+                                    Node->next = NULL;
+                                    delete Node;
+                                    break;
+                                }
+
+                                tmp = tmp->next;
+                            }
+                            break;
+                        }
+
+                    }
+                    temp = temp->next;
+                }
                 global_level--;
                 if (global_level >= 0) {
                     //cout << "success" << endl;
