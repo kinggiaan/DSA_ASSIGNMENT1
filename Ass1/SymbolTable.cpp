@@ -1,9 +1,9 @@
 #include "SymbolTable.h"
 
 
-SymbolTable::SymbolTable() :head(NULL) {};
-SymbolTable::SymbolTable(SymbolNode* _head) : head(_head)  {};
-SymbolTable::~SymbolTable() {
+SymbolTable::SymbolTable() :head(NULL) {};//Constructor
+SymbolTable::SymbolTable(SymbolNode* _head) : head(_head)  {};//Construct
+SymbolTable::~SymbolTable() {//Destructor
     SymbolNode* current = this->head;
     while (current != NULL) {
         SymbolNode* next = current->next;
@@ -15,7 +15,7 @@ SymbolTable::~SymbolTable() {
 
 
 }
-bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
+bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {///Kiem tra level lon nhat cua node
     SymbolNode* temp = this->head;
     while (temp != NULL) {
         if (temp->data.indentify == node->data.indentify) {
@@ -26,7 +26,7 @@ bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
     }
     return false;
 }
-string SymbolTable::PRINT(int globallv) {//CHANGE PRINT
+string SymbolTable::PRINT(int globallv) {//PRINT Function 
     string res = "";
     SymbolNode* temp = this->head;
     while (temp != NULL) {
@@ -64,7 +64,7 @@ string SymbolTable::PRINT(int globallv) {//CHANGE PRINT
     if (res[res.length() - 1] == ' ') res = res.substr(0, res.length() - 1);
     return res;
 }
-int SymbolTable::LOOKUPLargest(string iden) {
+int SymbolTable::LOOKUPLargest(string iden) {//TIM Level lon nhat cua iden 
     int largestLevel = 0, iniLevel = 0;
     SymbolNode* temp = this->head;
     while (temp != NULL) {
@@ -79,8 +79,7 @@ int SymbolTable::LOOKUPLargest(string iden) {
     return largestLevel;
 
 }
-void SymbolTable::RPRINT() {}
-SymbolNode* SymbolTable::REVERSE() {
+SymbolNode* SymbolTable::REVERSE() {//Reverse Linklist
     SymbolNode* head_ref = this->head;
     SymbolNode* curr = this->head;
     SymbolNode* pre = NULL;
@@ -113,16 +112,14 @@ void SymbolTable::run(string filename)
             if (str[str.length() - 1] == ' ')
                 throw InvalidInstruction(str);
             else {
-               
-                string quote = "'";
                 
                 size_t k,stop;
 
-                for (k = 0; k < str.length(); k++) {
+                for (k = 0; k < str.length(); k++) {//Dem so _
                     if (str[k] == ' ') count_space++;
                     if (count_space >= 2) break;
                 }
-                if (!count_space) {
+                if (!count_space) {//Neu khong co space
                     key1 = str.substr(0);
                     count_key++;
                 }
@@ -181,7 +178,7 @@ void SymbolTable::run(string filename)
             
          /////////INSERT////   
             if (key1 == "INSERT") {
-                if (MainTable.head == NULL) {
+                if (MainTable.head == NULL) {///INSERT Node dau tien
                     MainTable.head = new SymbolNode();
                     MainTable.head->data.indentify = key2;
                     MainTable.head->data.level = global_level;
@@ -191,9 +188,9 @@ void SymbolTable::run(string filename)
                 else {
                     bool again = false;//Kiem tra iden xuat hien lan nao trong MainTable chua
                     SymbolNode* temp = MainTable.head;
-                    while (temp != NULL) {
+                    while (temp != NULL) {//Kiem tra iden da co xuat hien hay chua
                         if (temp->data.indentify == key2) {
-                            if (global_level == temp->data.level) throw Redeclared(str);
+                            if (global_level == temp->data.level) throw Redeclared(str);//Neu da xuat hien va nam trong level block 
                             else {
                                 again = true;
                                 temp->redeclared = true;
@@ -201,7 +198,7 @@ void SymbolTable::run(string filename)
                         }
                         temp = temp->next;
                     }
-                    SymbolNode* tmp = new SymbolNode;
+                    SymbolNode* tmp = new SymbolNode;//Neu nhu chua xuat thi bat dau nhan data vao
                     tmp->data.indentify = key2;
                     tmp->data.level = global_level;
                     tmp->data.type = key3;
@@ -209,8 +206,8 @@ void SymbolTable::run(string filename)
                     
                     if(again) tmp->redeclared=true;// Neu co xuat hien roi thi tang len theo block
                     
-                    temp = MainTable.head;
-                    while (temp->next != NULL) {
+                    temp = MainTable.head;//Do temp o phia tren da bi thay doi
+                    while (temp->next != NULL) {////Duyet Linklist
                         temp = temp->next;
                         
                     }
@@ -219,7 +216,7 @@ void SymbolTable::run(string filename)
 
                 }
 
-                cout << "success" << endl;
+                cout << "success" << endl;///Neu Insert duoc
 
 
             }
@@ -229,19 +226,19 @@ void SymbolTable::run(string filename)
 
             if (key1 == "ASSIGN") {
                 if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
-                else {
+                else {///Neu Linklist da khoi tao
                     SymbolNode* temp = MainTable.head;
                     bool exist = false;
-                    while (temp != NULL) {
+                    while (temp != NULL) {///Kiem tra trong block nay co iden can ASSIGN hay khong?
                         
                         if (temp->data.indentify == key2) {
-                            if (temp->redeclared) {
-                                if (temp->data.level == MainTable.LOOKUPLargest(temp->data.indentify)) {//Neu tim thay
+                            if (temp->redeclared) {//Neu da khai bao > 1 lan
+                                if (temp->data.level == MainTable.LOOKUPLargest(temp->data.indentify)) {//Neu tim thay o block co level lon nhat
                                     exist = true;
                                     break;
                                 }
                             }
-                                else {
+                            else {//Neu chua khai bao lan nao
                                     exist = true;
                                     break;
                                 }
@@ -254,7 +251,7 @@ void SymbolTable::run(string filename)
                     if (exist==false) throw Undeclared(str);//Neu khong tim thay de assign
                     else {
                         ////Kiem tra key3 thuoc dang nao COnstdigi,Constring hay Iden
-                        if (checkQuote(key3)) {
+                        if (checkQuote(key3)) {///Kiem tra co dau '' trong VALUE
                             if (temp->data.type == "string") {
                                 if (checkConstString(deleteQuote(key3))) {
                                     cout << "success" << endl;
@@ -264,7 +261,7 @@ void SymbolTable::run(string filename)
                             }
                             else throw TypeMismatch(str);
                         }
-                        else if (checkConstDigi(key3)) {
+                        else if (checkConstDigi(key3)) {//Kiem tra VALUE co phai toan bo la digit
 
                             if (temp->data.type == "number") {
                                 if (checkConstDigi(key3)){
@@ -277,8 +274,8 @@ void SymbolTable::run(string filename)
                       
                         }
                         else {
-                            if(checkConstDigi(key3.substr(0,1))) throw TypeMismatch(str);
-                            else {
+                            if(checkConstDigi(key3.substr(0,1))) throw TypeMismatch(str);///Neu Khong phai number ma co chua trong 
+                            else {///Truong hop VALUE la identifer
                                 SymbolNode* tmp = MainTable.head;
                                 bool exits2 = false;
                                 while (tmp != NULL)
@@ -308,14 +305,14 @@ void SymbolTable::run(string filename)
 
             ///////////BEGIN/END
             if (key1 == "BEGIN") {
-                global_level++;
+                global_level++//level tang len
                 
 
             }
             ///END
             if (key1 == "END") {
                 SymbolNode* temp = MainTable.head;
-                while (temp != NULL) {
+                while (temp != NULL) {///Xoa het nhung identifier cua Block bi dong
                     
                     bool found = false;
                     if (temp->data.level == global_level) {
@@ -348,7 +345,7 @@ void SymbolTable::run(string filename)
                     else temp = temp->next;
                 }
                 global_level--;
-                if (global_level >= 0) {
+                if (global_level >= 0) {///Neu global level <0 thi la block chua Open ma da CLOSE
                 }
                 else throw UnknownBlock();
             }
@@ -357,7 +354,7 @@ void SymbolTable::run(string filename)
                 
                 if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
                 else {
-                    int largestLevel = 0,iniLevel=0;
+                    int largestLevel = 0,iniLevel=0;///Tim block co level lon nhat cua iden
                     bool found = false;
                     SymbolNode* temp = MainTable.head;
                     while (temp != NULL) {

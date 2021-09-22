@@ -41,7 +41,6 @@ public:
     bool checkSameBlockLevelDec(SymbolNode* node);
     int LOOKUPLargest(string _iden);
     string PRINT(int _global_level);
-    void RPRINT();
     SymbolNode* REVERSE();
 
 };
