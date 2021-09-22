@@ -246,16 +246,17 @@ void SymbolTable::run(string filename)
                     while (temp != NULL) {
                         
                         if (temp->data.indentify == key2) {
-                            if(temp->redeclared){
+                            if (temp->redeclared) {
                                 if (temp->data.level == global_level) {//Neu tim thay
                                     exist = true;
                                     break;
                                 }
+                            }
                                 else {
                                     exist = true;
                                     break;
                                 }
-                        }
+                        
                         }
                         
                     

@@ -1,6 +1,8 @@
-INSERT log8 string
-INSERT z number
-INSERT q string
-INSERT v50f number
-RPRINT
+INSERT mfgP23 number
+INSERT gCI string
+INSERT yhcEI number
+INSERT gPg string
+INSERT yU string
+LOOKUP yhcEI
+INSERT nz1K string
 PRINT
