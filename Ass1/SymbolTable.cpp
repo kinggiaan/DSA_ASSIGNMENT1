@@ -26,24 +26,42 @@ bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
     }
     return false;
 }
-void SymbolTable::PRINT(int globallv) {//CHANGE PRINT
+string SymbolTable::PRINT(int globallv) {//CHANGE PRINT
+    string res = "";
     SymbolNode* temp = this->head;
     while (temp != NULL) {
         if (temp->redeclared == 0) {
             if (temp->next == NULL) {
-                cout << temp->data.indentify << "//" << temp->data.level << endl;
+                res += temp->data.indentify;
+                res += "//";
+                res+= to_string(temp->data.level);
+                    
             }
-            else cout << temp->data.indentify << "//" << temp->data.level << " ";
+            else { 
+                res += temp->data.indentify;
+                res += "//";
+                res += to_string(temp->data.level);
+                res += " ";
+            }
         }
         else if (temp->data.level == globallv) {
             if (temp->next == NULL) {
-                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
+                res += temp->data.indentify;
+                res += "//";
+                res += to_string(temp->data.level);
+
             }
-            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+            else {
+                res += temp->data.indentify;
+                res += "//";
+                res += to_string(temp->data.level);
+                res += " ";
+            }
         }
 
         temp = temp->next;
     }
+    return res;
 }
 int SymbolTable::LOOKUPLargest(string iden) {
     int largestLevel = 0, iniLevel = 0;
@@ -372,13 +390,19 @@ void SymbolTable::run(string filename)
             }
             ///PRINT
             if (key1 == "PRINT") {
-              MainTable.PRINT(global_level);
+                if (MainTable.head!=NULL) {
+                    cout << MainTable.PRINT(global_level);
+                    cout << endl;
+                }
             }
             ///RPRINT
             if (key1 == "RPRINT") {
-                MainTable.head=MainTable.REVERSE();
-                MainTable.PRINT(global_level);
-                MainTable.head = MainTable.REVERSE();
+                if (MainTable.head != NULL) {
+                    MainTable.head = MainTable.REVERSE();
+                    cout << MainTable.PRINT(global_level);
+                    cout << endl;
+                    MainTable.head = MainTable.REVERSE();
+                }
             }
            // cout << "success"<<endl;
 

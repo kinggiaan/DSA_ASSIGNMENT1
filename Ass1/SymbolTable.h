@@ -42,7 +42,7 @@ public:
     
     int LOOKUPLargest(string _iden);
     
-    void PRINT(int _global_level);
+    string PRINT(int _global_level);
     void RPRINT();
     void DeleteNode(SymbolNode* Node);
     SymbolNode* REVERSE();

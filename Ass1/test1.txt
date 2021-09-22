@@ -2,9 +2,5 @@ INSERT log8 string
 INSERT z number
 INSERT q string
 INSERT v50f number
-BEGIN
-INSERT r number
+RPRINT
 PRINT
-INSERT a number
-INSERT s2Q string
-ASSIGN log8 770
