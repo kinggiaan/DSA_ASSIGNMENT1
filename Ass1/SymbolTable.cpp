@@ -44,7 +44,7 @@ string SymbolTable::PRINT(int globallv) {//CHANGE PRINT
                 res += " ";
             }
         }
-        else if (temp->data.level == globallv) {
+        else if (temp->data.level == this->LOOKUPLargest(temp->data.indentify)) {
             if (temp->next == NULL) {
                 res += temp->data.indentify;
                 res += "//";

@@ -5,4 +5,22 @@ INSERT gPg string
 INSERT yU string
 LOOKUP yhcEI
 INSERT nz1K string
-PRINT
+BEGIN
+INSERT yU string
+INSERT h number
+INSERT qr number
+BEGIN
+RPRINT
+LOOKUP mfgP23
+INSERT n1N9a number
+INSERT t string
+INSERT mZmx8 number
+INSERT dlg string
+BEGIN
+INSERT z2k1 string
+INSERT p string
+RPRINT
+INSERT bfKE string
+END
+INSERT tB12F number
+ASSIGN mZmx8 'Z'
