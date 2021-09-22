@@ -1,67 +1,10 @@
+INSERT log8 string
+INSERT z number
+INSERT q string
+INSERT v50f number
 BEGIN
-INSERT itn9 string
-INSERT dHz number
-INSERT doAz number
-INSERT e33P1d number
+INSERT r number
 PRINT
-INSERT m1hVZ number
-INSERT iA_EC string
-BEGIN
-INSERT rP number
-RPRINT
-END
-INSERT l string
 INSERT a number
-INSERT gJf number
-RPRINT
-INSERT rVBpJi string
-END
-INSERT c number
-RPRINT
-ASSIGN c 134
-INSERT pWCA string
-INSERT x number
-mjQU wQucTe
-END
-INSERT j9D string
-ASSIGN dHz 909
-PRINT
-LOOKUP e33P1d
-LOOKUP rP
-BEGIN
-LOOKUP itn9
-END
-INSERT tIc string
-INSERT lpmHNY string
-INSERT oT string
-INSERT oVK number
-INSERT w5vkq number
-INSERT f number
-INSERT mVH string
-LOOKUP tIc
-INSERT bQO string
-INSERT hgrG number
-END
-INSERT kPLB7Y string
-INSERT f number
-INSERT k0r number
-INSERT zNsfy number
-js_tVq uU4u
-btr0 c
-INSERT d4W number
-INSERT xv number
-INSERT gE string
-RPRINT
-keOC hWd0
-PRINT
-BEGIN
-INSERT u_TtWA number
-INSERT jW string
-ASSIGN kPLB7Y l
-INSERT otVk number
-RPRINT
-END
-INSERT ouo string
-INSERT bEa number
-PRINT
-INSERT hC string
+INSERT s2Q string
+ASSIGN log8 770

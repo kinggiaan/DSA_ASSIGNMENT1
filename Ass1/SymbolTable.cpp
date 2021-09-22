@@ -227,9 +227,17 @@ void SymbolTable::run(string filename)
                     bool exist = false;
                     while (temp != NULL) {
                         
-                        if (temp->data.indentify == key2) {//Neu tim thay
-                            exist = true;
-                            break;
+                        if (temp->data.indentify == key2) {
+                            if(temp->redeclared){
+                                if (temp->data.level == global_level) {//Neu tim thay
+                                    exist = true;
+                                    break;
+                                }
+                                else {
+                                    exist = true;
+                                    break;
+                                }
+                        }
                         }
                         
                     
