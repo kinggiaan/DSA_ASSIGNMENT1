@@ -1,10 +1,2 @@
-INSERT x number
-INSERT y string
-BEGIN
-INSERT x number
-INSERT z number
-RPRINT
-PRINT
-END
-LOOKUP x
-PRINT
+INSERT ySXl number
+ASSIGN ySXl 'TMo F'

@@ -104,6 +104,7 @@ void SymbolTable::run(string filename)
 
                 for (k = 0; k < str.length(); k++) {
                     if (str[k] == ' ') count_space++;
+                    if (count_space >= 2) break;
                 }
                 if (!count_space) {
                     key1 = str.substr(0);
