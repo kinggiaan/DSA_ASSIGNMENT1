@@ -26,7 +26,7 @@ bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
     }
     return false;
 }
-void SymbolTable::PRINT(int globallv) {
+void SymbolTable::PRINT(int globallv) {//CHANGE PRINT
     SymbolNode* temp = this->head;
     while (temp != NULL) {
         if (temp->redeclared == 0) {
