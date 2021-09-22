@@ -299,8 +299,12 @@ void SymbolTable::run(string filename)
             if (key1 == "END") {
                 SymbolNode* temp = MainTable.head;
                 while (temp != NULL) {
+                    
+                    bool found = false;
                     if (temp->data.level == global_level) {
                         SymbolNode* Node = temp;
+                        found = true;
+                        temp = temp->next;
                         if (MainTable.head == Node) {//Node in the head
                             MainTable.head = Node->next;
                             Node->next = NULL;
@@ -320,11 +324,12 @@ void SymbolTable::run(string filename)
 
                                 tmp = tmp->next;
                             }
-                            break;
+                            
                         }
 
                     }
-                    temp = temp->next;
+                    if (found) found = false;
+                    else temp = temp->next;
                 }
                 global_level--;
                 if (global_level >= 0) {
