@@ -1,25 +1,2 @@
-BEGIN
-INSERT tTiC4w number
-INSERT x2kb7Y number
-INSERT p8Y number
-INSERT aXoMc number
-INSERT gX number
-PRINT
-INSERT sc number
-INSERT siPN string
-INSERT dx number
-PRINT
-END
-BEGIN
-INSERT b string
-BEGIN
-ASSIGN aXoMc 174
-INSERT a_y number
-RPRINT
-INSERT he number
-RPRINT
-ASSIGN siPN '347'
-INSERT c1 number
-INSERT ij string
-END
-INSERT daKzd string
+INSERT ySXl number
+ASSIGN ySXl 'TMo F'
