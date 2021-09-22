@@ -61,6 +61,7 @@ string SymbolTable::PRINT(int globallv) {//CHANGE PRINT
 
         temp = temp->next;
     }
+    if (res[res.length() - 1] == ' ') res = res.substr(0, res.length() - 1);
     return res;
 }
 int SymbolTable::LOOKUPLargest(string iden) {

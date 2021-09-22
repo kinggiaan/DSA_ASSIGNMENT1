@@ -1,26 +1,91 @@
-INSERT mfgP23 number
-INSERT gCI string
-INSERT yhcEI number
-INSERT gPg string
-INSERT yU string
-LOOKUP yhcEI
-INSERT nz1K string
+INSERT y string
 BEGIN
-INSERT yU string
-INSERT h number
-INSERT qr number
+INSERT y string
+INSERT rEsTB string
+PRINT
+PRINT
+LOOKUP y
 BEGIN
 RPRINT
-LOOKUP mfgP23
-INSERT n1N9a number
-INSERT t string
-INSERT mZmx8 number
-INSERT dlg string
-BEGIN
-INSERT z2k1 string
-INSERT p string
+INSERT z string
+INSERT fd string
 RPRINT
-INSERT bfKE string
+ASSIGN z 'v7'
+INSERT f number
 END
-INSERT tB12F number
-ASSIGN mZmx8 'Z'
+INSERT gf string
+INSERT pGrN number
+INSERT zl string
+END
+INSERT og_2i number
+ASSIGN y 'bT'
+INSERT qec2 string
+INSERT j string
+INSERT qcK string
+INSERT rxMR5 string
+INSERT nz string
+INSERT vp_RH string
+INSERT ay1 number
+INSERT sn number
+INSERT wso number
+RPRINT
+BEGIN
+INSERT lNBkY5 number
+INSERT x string
+INSERT pRdn3n string
+INSERT okcZUN string
+INSERT jPB_8 string
+LOOKUP sn
+LOOKUP pGrN
+BEGIN
+INSERT xfQ string
+ASSIGN vp_RH okcZUN
+INSERT xj number
+INSERT qVrk0R number
+INSERT pOs number
+INSERT zOblCc number
+PRINT
+LOOKUP j
+INSERT u1TcC string
+INSERT nY string
+INSERT zmcbV number
+INSERT f string
+INSERT rJhP0 string
+RPRINT
+qE_ oN1UeH
+END
+INSERT cKYwt number
+INSERT o3F string
+d l3G7
+INSERT u number
+PRINT
+INSERT xL number
+INSERT mkW number
+INSERT nN5 string
+ASSIGN pOs 'q'
+RPRINT
+INSERT hyisc number
+INSERT sFJrDq number
+INSERT j number
+INSERT sLJ string
+LOOKUP j
+ASSIGN xfQ xfQ
+INSERT dktLR number
+LOOKUP zl
+ASSIGN rEsTB f
+END
+ASSIGN z 1112
+ASSIGN pOs o3F
+INSERT a string
+INSERT zU9q string
+INSERT bzCyYN string
+INSERT gR string
+INSERT twq4 string
+ASSIGN gf 28
+INSERT d number
+INSERT hg6 string
+INSERT sGi3qP number
+INSERT rll number
+INSERT rk number
+RPRINT
+INSERT hUXrRd number
