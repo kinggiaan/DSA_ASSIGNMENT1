@@ -4,4 +4,5 @@ BEGIN
 INSERT x number
 INSERT z number
 RPRINT
+PRINT
 END

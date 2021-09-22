@@ -31,9 +31,9 @@ void SymbolTable::PRINT(int globallv) {
     while (temp != NULL) {
         if (temp->redeclared == 0) {
             if (temp->next == NULL) {
-                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
+                cout << temp->data.indentify << "//" << temp->data.level << endl;
             }
-            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+            else cout << temp->data.indentify << "//" << temp->data.level << " ";
         }
         else if (temp->data.level == globallv) {
             if (temp->next == NULL) {
@@ -332,7 +332,7 @@ void SymbolTable::run(string filename)
             if (key1 == "RPRINT") {
                 MainTable.head=MainTable.REVERSE();
                 MainTable.PRINT(global_level);
-
+                MainTable.head = MainTable.REVERSE();
             }
            // cout << "success"<<endl;
 
