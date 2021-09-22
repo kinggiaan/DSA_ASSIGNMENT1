@@ -39,12 +39,9 @@ public:
     ~SymbolTable() ;
     void run(string filename);
     bool checkSameBlockLevelDec(SymbolNode* node);
-    
     int LOOKUPLargest(string _iden);
-    
     string PRINT(int _global_level);
     void RPRINT();
-    void DeleteNode(SymbolNode* Node);
     SymbolNode* REVERSE();
 
 };

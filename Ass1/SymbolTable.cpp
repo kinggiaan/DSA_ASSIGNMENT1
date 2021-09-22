@@ -94,10 +94,7 @@ SymbolNode* SymbolTable::REVERSE() {
     head_ref = pre;
     return head_ref;
 }
-void SymbolTable::DeleteNode(SymbolNode* Node) {
-    
-    
-}
+
 void SymbolTable::run(string filename)
 {
     int global_level = 0;
@@ -128,7 +125,6 @@ void SymbolTable::run(string filename)
                 if (!count_space) {
                     key1 = str.substr(0);
                     count_key++;
-                    //cout << key1<<endl;
                 }
                 else {
                     if (count_space == 2) {//Neu 2 space la 3 gia tri 
@@ -138,16 +134,14 @@ void SymbolTable::run(string filename)
                                 count_key++;
                                 k++;
                                 stop = k;
-                                //cout << key1 ;
+                                
                             }
                             if (str[k] == ' ' && count_key == 1) {//key 2 va 3
                                 key2 = str.substr(stop, k-stop);
                                 count_key++;
                                 k++;
                                 stop = k ;
-                                //cout << key2;
-                            
-                            //if (str[k] == ' ' && count_key == 2) {//key 2
+                                
                                 key3 = str.substr(stop, str.length());
                                 
                                 count_key++;
@@ -162,15 +156,10 @@ void SymbolTable::run(string filename)
                                 count_key++;
                                 k++;
                                 stop = k;
-                               // cout << key1;
-
                                
-
-                                //if (str[k] == ' ' && count_key == 2) {//key 2
                                 key2 = str.substr(stop, str.length());
                                 count_key++;
 
-                                //cout << key2 << endl;
                             }
                         }
                     }
@@ -223,8 +212,7 @@ void SymbolTable::run(string filename)
                     temp = MainTable.head;
                     while (temp->next != NULL) {
                         temp = temp->next;
-                        //if (temp->data.indentify == tmp->data.indentify) throw Redeclared(str);
-                        //if (checkSameBlockLevelDec(tmp)) throw Redeclared(str);
+                        
                     }
                     temp->next = tmp;
                     
@@ -300,7 +288,7 @@ void SymbolTable::run(string filename)
                                         {
                                             cout << "success" << endl;
                                             exits2 = true;
-                                            // delete tmp;
+                                            
                                             break;
                                         }
                                         else throw TypeMismatch(str);
@@ -321,7 +309,7 @@ void SymbolTable::run(string filename)
             ///////////BEGIN/END
             if (key1 == "BEGIN") {
                 global_level++;
-                //cout << "success" << endl;
+                
 
             }
             ///END
@@ -361,7 +349,6 @@ void SymbolTable::run(string filename)
                 }
                 global_level--;
                 if (global_level >= 0) {
-                    //cout << "success" << endl;
                 }
                 else throw UnknownBlock();
             }
@@ -382,7 +369,6 @@ void SymbolTable::run(string filename)
                                 break;
                             }
                             if (iniLevel > largestLevel) largestLevel = iniLevel;
-                            //if (largestLevel == 0) break;
                         }
                         temp = temp->next;
                     }
@@ -406,14 +392,14 @@ void SymbolTable::run(string filename)
                     MainTable.head = MainTable.REVERSE();
                 }
             }
-           // cout << "success"<<endl;
+           
 
 
         }
         
     }
     if (global_level > 0) throw UnclosedBlock(global_level);
-    //else if (global_level < 0) throw UnknownBlock;
+    
 }
 /////////////Function Addition/////
 bool checkCode(string str) {
@@ -440,9 +426,9 @@ bool checkConstString(string str) {
     return true;
 }
 bool checkQuote(string str) {
-    //for (size_t i = 0; i < str.length(); i++) {
+    
         if (str[0]==39) return true;
-    //}
+    
     return false;
 }
 string deleteQuote(string str) {
