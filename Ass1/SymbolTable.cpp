@@ -15,6 +15,69 @@ SymbolTable::~SymbolTable() {
 
 
 }
+<<<<<<< Updated upstream
+=======
+bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
+    SymbolNode* temp = this->head;
+    while (temp != NULL) {
+        if (temp->data.indentify == node->data.indentify) {
+            if (temp->data.level == node->data.level) return true;
+        }
+
+        temp = temp->next;
+    }
+    return false;
+}
+void SymbolTable::PRINT(int globallv) {
+    SymbolNode* temp = this->head;
+    while (temp != NULL) {
+        if (temp->redeclared == 0) {
+            if (temp->next == NULL) {
+                cout << temp->data.indentify << "//" << temp->data.level << endl;
+            }
+            else cout << temp->data.indentify << "//" << temp->data.level << " ";
+        }
+        else if (temp->data.level == globallv) {
+            if (temp->next == NULL) {
+                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
+            }
+            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
+        }
+
+        temp = temp->next;
+    }
+}
+int SymbolTable::LOOKUPLargest(string iden) {
+    int largestLevel = 0, iniLevel = 0;
+    SymbolNode* temp = this->head;
+    while (temp != NULL) {
+        if (temp->data.indentify == iden) {
+
+            iniLevel = temp->data.level;
+
+            if (iniLevel > largestLevel) largestLevel = iniLevel;
+        }
+        temp = temp->next;
+    }
+    return largestLevel;
+
+}
+void SymbolTable::RPRINT() {}
+SymbolNode* SymbolTable::REVERSE() {
+    SymbolNode* head_ref = NULL;
+    SymbolNode* curr = this->head;
+    SymbolNode* pre = NULL;
+    SymbolNode* next = NULL;
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = pre;
+        pre = curr;
+        curr = next;
+    }
+    head_ref = pre;
+    return head_ref;
+}
+>>>>>>> Stashed changes
 void SymbolTable::run(string filename)
 {
     int global_level = 0;
@@ -250,6 +313,20 @@ void SymbolTable::run(string filename)
                     else throw Undeclared(str);
                 }
             }
+<<<<<<< Updated upstream
+=======
+            ///PRINT
+            if (key1 == "PRINT") {
+              MainTable.PRINT(global_level);
+            }
+            ///RPRINT
+            if (key1 == "RPRINT") {
+                MainTable.head=MainTable.REVERSE();
+                MainTable.PRINT(global_level);
+                MainTable.head = MainTable.REVERSE();
+
+            }
+>>>>>>> Stashed changes
            // cout << "success"<<endl;
         }
         
