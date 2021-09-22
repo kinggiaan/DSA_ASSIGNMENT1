@@ -92,6 +92,12 @@ INSERT y string
 BEGIN
 INSERT x number
 INSERT z number
+<<<<<<< Updated upstream
+PRINT
+END
+>>>>>>> Stashed changes
+=======
+RPRINT
 PRINT
 END
 >>>>>>> Stashed changes

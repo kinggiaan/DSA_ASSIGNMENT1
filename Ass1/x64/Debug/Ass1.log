@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ﻿  main.cpp
   SymbolTable.cpp
   Generating Code...
+=======
+﻿  SymbolTable.cpp
+>>>>>>> Stashed changes
   Ass1.vcxproj -> D:\DSA\Ass1\DSA_ASSIGNMENT1\x64\Debug\Ass1.exe
