@@ -40,10 +40,11 @@ public:
     void run(string filename);
     bool checkSameBlockLevelDec(SymbolNode* node);
     
-
-    void PRINT();
+    int LOOKUPLargest(string _iden);
+    
+    void PRINT(int _global_level);
     void RPRINT();
-    void REVERSE();
+    SymbolNode* REVERSE();
 };
 #endif
 

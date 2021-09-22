@@ -15,8 +15,6 @@ SymbolTable::~SymbolTable() {
 
 
 }
-<<<<<<< Updated upstream
-=======
 bool SymbolTable::checkSameBlockLevelDec(SymbolNode* node) {
     SymbolNode* temp = this->head;
     while (temp != NULL) {
@@ -33,9 +31,9 @@ void SymbolTable::PRINT(int globallv) {
     while (temp != NULL) {
         if (temp->redeclared == 0) {
             if (temp->next == NULL) {
-                cout << temp->data.indentify << "//" << temp->data.level << endl;
+                cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << endl;
             }
-            else cout << temp->data.indentify << "//" << temp->data.level << " ";
+            else cout << temp->data.indentify << "//" << this->LOOKUPLargest(temp->data.indentify) << " ";
         }
         else if (temp->data.level == globallv) {
             if (temp->next == NULL) {
@@ -64,7 +62,7 @@ int SymbolTable::LOOKUPLargest(string iden) {
 }
 void SymbolTable::RPRINT() {}
 SymbolNode* SymbolTable::REVERSE() {
-    SymbolNode* head_ref = NULL;
+    SymbolNode* head_ref = this->head;
     SymbolNode* curr = this->head;
     SymbolNode* pre = NULL;
     SymbolNode* next = NULL;
@@ -77,7 +75,6 @@ SymbolNode* SymbolTable::REVERSE() {
     head_ref = pre;
     return head_ref;
 }
->>>>>>> Stashed changes
 void SymbolTable::run(string filename)
 {
     int global_level = 0;
@@ -179,17 +176,31 @@ void SymbolTable::run(string filename)
                     MainTable.head->next = NULL;
                 }
                 else {
+                    bool again = false;//Kiem tra iden xuat hien lan nao trong MainTable chua
                     SymbolNode* temp = MainTable.head;
-                    if (temp->data.indentify==key2&&global_level==temp->data.level) throw Redeclared(str);
+                    while (temp != NULL) {
+                        if (temp->data.indentify == key2) {
+                            if (global_level == temp->data.level) throw Redeclared(str);
+                            else {
+                                again = true;
+                                temp->redeclared = true;
+                            }
+                        }
+                        temp = temp->next;
+                    }
                     SymbolNode* tmp = new SymbolNode;
                     tmp->data.indentify = key2;
                     tmp->data.level = global_level;
                     tmp->data.type = key3;
                     tmp->next = NULL;
+                    
+                    if(again) tmp->redeclared=true;// Neu co xuat hien roi thi tang len theo block
+                    
+                    temp = MainTable.head;
                     while (temp->next != NULL) {
                         temp = temp->next;
                         //if (temp->data.indentify == tmp->data.indentify) throw Redeclared(str);
-                        if (checkSameBlockLevelDec(tmp)) throw Redeclared(str);
+                        //if (checkSameBlockLevelDec(tmp)) throw Redeclared(str);
                     }
                     temp->next = tmp;
                     
@@ -280,7 +291,7 @@ void SymbolTable::run(string filename)
                 //cout << "success" << endl;
 
             }
-
+            ///END
             if (key1 == "END") {
                 global_level--;
                 if (global_level >= 0) {
@@ -288,7 +299,7 @@ void SymbolTable::run(string filename)
                 }
                 else throw UnknownBlock();
             }
-
+            ///LOOKUP
             if (key1 == "LOOKUP") {
                 
                 if (MainTable.head == NULL) throw Undeclared(str);//SymbolNode chua khoi tao
@@ -297,7 +308,7 @@ void SymbolTable::run(string filename)
                     bool found = false;
                     SymbolNode* temp = MainTable.head;
                     while (temp != NULL) {
-                        if ((temp->data.indentify == key2)&&(temp->data.level<=global_level)) {
+                        if (temp->data.indentify == key2) {
                             found = true;
                             iniLevel = temp->data.level;
                             if (iniLevel == global_level) {
@@ -313,8 +324,6 @@ void SymbolTable::run(string filename)
                     else throw Undeclared(str);
                 }
             }
-<<<<<<< Updated upstream
-=======
             ///PRINT
             if (key1 == "PRINT") {
               MainTable.PRINT(global_level);
@@ -323,11 +332,11 @@ void SymbolTable::run(string filename)
             if (key1 == "RPRINT") {
                 MainTable.head=MainTable.REVERSE();
                 MainTable.PRINT(global_level);
-                MainTable.head = MainTable.REVERSE();
 
             }
->>>>>>> Stashed changes
            // cout << "success"<<endl;
+
+
         }
         
     }
@@ -366,15 +375,4 @@ bool checkQuote(string str) {
 }
 string deleteQuote(string str) {
     return str.substr(1, str.length() - 2);
-}
-bool SymbolTable::checkSameBlockLevelDec( SymbolNode* node) {
-    SymbolNode* temp = this->head;
-    while (temp != NULL) {
-        if (temp->data.indentify == node->data.indentify) {
-            if (temp->data.level == node->data.level) return true;
-        }
-
-        temp = temp->next;
-    }
-    return false;
 }

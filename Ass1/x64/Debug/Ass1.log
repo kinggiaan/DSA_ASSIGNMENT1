@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
-﻿  main.cpp
-  SymbolTable.cpp
-  Generating Code...
-=======
 ﻿  SymbolTable.cpp
->>>>>>> Stashed changes
+  main.cpp
+  Generating Code...
+  LINK : D:\DSA\Ass1\DSA_ASSIGNMENT1\x64\Debug\Ass1.exe not found or not built by the last incremental link; performing full link
   Ass1.vcxproj -> D:\DSA\Ass1\DSA_ASSIGNMENT1\x64\Debug\Ass1.exe
