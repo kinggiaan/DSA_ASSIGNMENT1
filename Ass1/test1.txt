@@ -1,6 +1,7 @@
-BEGIN
-INSERT x string
+INSERT x number
+INSERT y string
 BEGIN
 INSERT x number
-END
+INSERT z number
+RPRINT
 END

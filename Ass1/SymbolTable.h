@@ -44,7 +44,7 @@ public:
     
     void PRINT(int _global_level);
     void RPRINT();
-    void REVERSE();
+    SymbolNode* REVERSE();
 };
 #endif
 
