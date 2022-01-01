@@ -305,7 +305,7 @@ void SymbolTable::run(string filename)
 
             ///////////BEGIN/END
             if (key1 == "BEGIN") {
-                global_level++//level tang len
+                global_level++;//level tang len;
                 
 
             }
